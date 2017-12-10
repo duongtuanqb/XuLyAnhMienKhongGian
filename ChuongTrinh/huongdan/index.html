@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Hướng dẫn sử dụng chương trình Xử lý ảnh</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="noindex, follow">
+		<link href="./lib/bootstrap.min.css" rel="stylesheet">
+		<link href="./lib/font-awesome.min.css" rel="stylesheet">
+		<link href="./lib/prism.css" rel="stylesheet">
+
+		<link href="./lib/style.min.css" rel="stylesheet">
+		<script src="./lib/jquery.min.js"></script>
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset-top="0">
+		
+		<div class="container">
+			<div class="bs-docs-sidebar">
+				<ul id="accordion" class="nav nav-list bs-docs-sidenav">
+					<li class="intro">
+						 <h3>Hướng dẫn</h3>
+					</li>
+					<li class="active"><a href="#introduction">Giới thiệu</a></li>
+
+					<li><a href="#huong-dan-video">Hướng dẫn bằng Video</a></li>
+					
+					<li><a href="#cai-dat">Cài đặt</a></li>
+
+					<li><a href="#giao-dien-chinh">Giao diện chính</a></li>
+
+					<li><a href="#histogram">Cân bằng Histogram</a></li>
+
+					<li class="panel"><a data-toggle="collapse" data-parent="#accordion" href="#toan-tu-diem">Toán tử điểm không gian <i class="fa fa-chevron-down"></i></a>
+						<ul id="toan-tu-diem" class="collapse">
+							<li><a href="#bien-doi-log">Phép biến đổi Log</a></li>
+							<li><a href="#bien-doi-luy-thua">Phép biến đổi Luỹ thừa</a></li>
+							<li><a href="#do-tuong-phan">Độ tương phản</a></li>
+							<li><a href="#anh-am-ban">Ảnh âm bản</a></li>
+						</ul>
+					</li>
+
+					<li class="panel"><a data-toggle="collapse" data-parent="#accordion" href="#loc-anh">Lọc ảnh miền không gian <i class="fa fa-chevron-down"></i></a>
+						<ul id="loc-anh" class="collapse">
+							<li><a href="#loc-phi-tuyen-tinh">Lọc phi tuyến tính</a></li>
+							<li><a href="#loc-tuyen-tinh">Lọc tuyến tính</a></li>
+						</ul>
+					</li>
+
+					<li><a href="#phep-nhieu">Các phép nhiễu</a></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<section id="introduction">
+						<div class="page-header">
+							 <h1>Giới thiệu</h1>
+						</div>
+						 <h3 class="section">Chương trình <i>XỬ LÝ ẢNH TRONG MIỀN KHÔNG GIAN</i></h3>
+						 <div class="small-doc-img">
+							<img src="./images/welcome.png">
+						</div>
+						<p><strong>Báo cáo Bài tập lớn môn Xử lý ảnh</strong></p>
+						<p>GVHD: Ths. Ngô Thanh Tú</p>
+						<p>Sinh viên thực hiện:</p>
+						<ul>
+							<li>Dương Anh Tuấn - 14DDS0403262</li>
+							<li>Hồ Sỹ Đạt - 14DDS0403211</li>
+							<li>Nguyễn Anh Tuấn - 14DDS0403263</li>
+						</ul>
+					</section>
+					<section id="huong-dan-video">
+						<div class="page-header">
+							 <h1>Hướng dẫn video</h1>
+						</div>
+						<div align="center" style="width: 830px;margin-left: -60px;margin-bottom: 20px;text-align: center;background-color: #f0f0f0;" class="embed-responsive embed-responsive-16by9">
+						    <video controls="controls" loop class="embed-responsive-item">
+						        <source src="video-huong-dan.mp4" type="video/mp4">
+						    </video>
+						</div>
+					</section>
+					<section id="cai-dat">
+						<div class="page-header">
+							 <h1>Cài đặt</h1>
+						</div>
+						<strong>Yêu cầu phần mềm:</strong>
+						Matlab
+						<p>
+							Chẳng cần cài đặt gì. Mở Matlab lên và Run thôi :v
+						</p>
+					</section>
+					<section id="giao-dien-chinh">
+						<div class="page-header">
+							 <h1>Giao diện chính</h1>
+						</div>
+						<div class="small-doc-img">
+							<img src="./images/giao-dien-chinh.png">
+						</div>
+						<strong>Các thành phần trong giao diện:</strong>
+						<ul>
+							<li>2 khung <kbd>Axes</kbd> hiển thị ảnh góc và ảnh xử lý.</li>
+							<li>Button <kbd>Tải ảnh</kbd> để upload ảnh lên.</li>
+							<li>Button <kbd>Lưu ảnh</kbd> để lưu ảnh đã xử lý về thư mục.</li>
+							<li> Các button chức năng:
+								<ul>
+									<li>Button <kbd>Histogram</kbd>: xử lý Histogram cho ảnh.</li>
+									<li>Button <kbd>Toán tử điểm không gian</kbd>: xử lý các phép biến đổi xám cơ bản.</li>
+									<li>Button <kbd>Lọc ảnh trong miền không gian</kbd>: lọc tuyến tính và lọc phi tuyến tính.</li>
+									<li>Button <kbd>Các phép nhiễu</kbd>: xử lý nhiễu cho ảnh.</li>
+								</ul>
+							</li>
+						</ul>
+
+						<p>Để sử dụng các chức năng trên, trước hết phải <span class="label label-info">upload ảnh</span>. Nếu không, sẽ có <span class="label label-danger">thông báo lỗi!</span></p>
+					</section>
+					<section id="histogram">
+						<div class="page-header">
+							 <h1>Histogram</h1>
+						</div>
+						<div class="small-doc-img">
+							<img src="./images/histogram.png">
+						</div>
+						<p>Chọn <kbd>Mức xám</kbd> muốn cân bằng.</p>
+						<p>Click button <kbd>Cân bằng Histogram</kbd> để cân bằng ảnh xám.</p>
+						<p>Click button <kbd>Biểu đồ Histogram ảnh góc</kbd> để xem Histogram của ảnh góc.</p>
+					</section>
+					<section id="toan-tu-diem">
+						<div class="page-header">
+							<h1>Toán tử điểm không gian</h1>
+						</div>
+						<div class="small-doc-img">
+							<img src="./images/toan-tu-diem.png" alt="">
+						</div>
+						<h3 class="section" id="bien-doi-log">Phép biến đổi Log</h3>
+						<p>Phép biến đổi Log có công thức: <span class="label label-info">c * log(1 + g3)</span></p>
+						<p><kbd>g3</kbd> là mức ảnh xám ban đầu.</p>
+						<p>Thay đổi giá trị <kbd>c</kbd> để xử lý, bằng cách kéo thanh slider.</p>
+						<p>Lưu ý: <kbd>c > 1</kbd></p>
+						<div class="small-doc-img">
+							<img src="./images/bien-doi-log.png" alt="">
+						</div>
+
+						<h3 class="section" id="bien-doi-luy-thua">Phép biến đổi Luỹ thừa</h3>
+						<p>Phép biến đổi Luỹ thừa có công thức: <span class="label label-info">c * g3^gama</span></p>
+						<p><kbd>g3</kbd> là mức ảnh xám ban đầu.</p>
+						<p>Thay đổi giá trị <kbd>c</kbd> để xử lý, bằng cách kéo thanh slider.</p>
+						<div class="small-doc-img">
+							<img src="./images/bien-doi-luy-thua.png" alt="">
+						</div>
+
+						<h3 class="section" id="do-tuong-phan">Độ tương phản</h3>
+						<div class="small-doc-img">
+							<img src="./images/do-tuong-phan.png" alt="">
+						</div>
+
+						<h3 class="section" id="anh-am-ban">Ảnh âm bản</h3>
+						<p>Xử dụng hàm: <span class="label label-info">imcomplement(hinhanh)</span></p>
+						<div class="small-doc-img">
+							<img src="./images/anh-am-ban.png" alt="">
+						</div>
+					</section>
+					<section id="loc-anh">
+						<div class="page-header">
+							<h1>Lọc ảnh trong miền không gian</h1>
+						</div>
+						<div class="small-doc-img">
+							<img src="./images/loc-anh-mien-khong-gian.png" alt="">
+						</div>
+
+						<h3 class="section" id="loc-phi-tuyen-tinh">Lọc phi tuyến tính</h3>
+						<p>Có 2 bộ lọc: <span class="label label-info">Lọc trung vị</span> và <span class="label label-info">Lọc hạng (Rank)</span></p>
+						<div class="small-doc-img">
+							<img src="./images/loc-hang.png" alt="">
+						</div>
+
+						<h3 class="section" id="loc-tuyen-tinh">Lọc tuyến tính</h3>
+						<p>Có các bộ lọc:</p>
+						<ul>
+							<li>Averge</li>
+							<li>Gaussian</li>
+							<li>Laplacian</li>
+							<li>Log</li>
+							<li>Prewitt</li>
+							<li>Sobel</li>
+							<li>Unsharp</li>
+						</ul>
+						<p>Tuỳ chọn Padding:</p>
+						<ul>
+							<li>Replicate</li>
+							<li>Symmetric</li>
+							<li>Circula</li>
+						</ul>
+						<div class="small-doc-img">
+							<img src="./images/loc-averge.png" alt="">
+						</div>
+					</section>
+					<section id="phep-nhieu">
+						<div class="page-header">
+							<h1>Các phép nhiễu</h1>
+						</div>
+						<p>Các bộ lọc nhiễu:</p>
+						<ul>
+							<li>Gaussian</li>
+							<li>Localvar</li>
+							<li>Possion</li>
+							<li>Salt & Pepper</li>
+							<li>Speckle</li>
+						</ul>
+						<div class="small-doc-img">
+							<img src="./images/phep-nhieu.png" alt="">
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				Ahihi
+			</div>
+		</div>
+		<script src="./lib/bootstrap.min.js"></script>
+</body></html>
